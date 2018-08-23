@@ -1,4 +1,4 @@
-package state
+package client
 
 import (
 	"flag"
@@ -53,12 +53,12 @@ func GetMetricsClientOutOfCluster(kubeconfig *string) *metrics.Clientset{
 	return clientset
 }
 
-func GetPrometheus(prom_url string) prometheus_api.Client{
+func GetPrometheus(prom_url string) *prometheus_api.Client{
 	var config = prometheus_api.Config{
 		Address: prom_url,
 	}
 	client, _ := prometheus_api.NewClient(config)
-	return client
+	return &client
 }
 
 func GetPrometheusApi(promCli *prometheus_api.Client) prometheus_v1.API{
