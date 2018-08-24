@@ -11,3 +11,5 @@ To run:
 - copy this url into pkg/config/varables.go.PrometheusURL
 4. run the app by running
 	go run main.go
+
+TODO: Make Makefile
