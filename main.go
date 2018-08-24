@@ -4,6 +4,7 @@ import (
 	"github.com/junkeun-yi/cluster-describer_kuberentes/pkg/client"
 	"github.com/junkeun-yi/cluster-describer_kuberentes/pkg/controller"
 	"github.com/junkeun-yi/cluster-describer_kuberentes/pkg/functions"
+	"github.com/junkeun-yi/cluster-describer_kuberentes/pkg/config"
 )
 
 
@@ -11,7 +12,7 @@ import (
 func main() {
 
 	kubeconfig := client.GetKubeConfig()
-	prom := client.GetPrometheus("http://ac39526f5a7c911e8964d060f0b9aa92-8462892.us-west-1.elb.amazonaws.com:9090")
+	prom := client.GetPrometheus(config.PrometheusURL)
 
 	var functionSet = functions.FunctionSet{
 		MetClient: client.GetMetricsClientOutOfCluster(kubeconfig),

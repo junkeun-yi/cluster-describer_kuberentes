@@ -2,6 +2,8 @@ package config
 
 const (
 
+	PrometheusURL = ""
+
 	NodeCPUUsageQuery = "sum(rate(node_cpu_seconds_total{mode!='idle'}[2m])) by (instance) / count(node_cpu_seconds_total{mode='idle'}) by (instance)"
 	NodeMemoryUsageQuery = "sum(node_memory_Active_bytes) by (instance) / count(node_memory_Active_bytes) by (instance)"
 	PodCPUUsageQuery = "sum (rate (container_cpu_usage_seconds_total{image!='', pod_name!=''}[1m])) by (pod_name)"
