@@ -11,7 +11,7 @@ import (
 func main() {
 
 	kubeconfig := client.GetKubeConfig()
-	prom := client.GetPrometheus("http://a9876c924a63311e8988a0692683aa03-352606435.us-west-1.elb.amazonaws.com:9090")
+	prom := client.GetPrometheus("http://ac39526f5a7c911e8964d060f0b9aa92-8462892.us-west-1.elb.amazonaws.com:9090")
 
 	var functionSet = functions.FunctionSet{
 		MetClient: client.GetMetricsClientOutOfCluster(kubeconfig),

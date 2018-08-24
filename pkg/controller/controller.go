@@ -11,6 +11,6 @@ type Controller struct {
 func (c *Controller) Run() {
 	f := c.FunctionSet
 
-	f.GetNodesInfo()
+	f.GetAllInfo()
 }
 
