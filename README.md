@@ -12,4 +12,4 @@ To run:
 4. run the app by running
 	go run main.go
 
-TODO: Make Makefile
+TODO: Make Makefile, add vendor
