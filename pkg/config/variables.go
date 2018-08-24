@@ -12,4 +12,7 @@ const (
 
 	NodeCPUCoresQuery = "sum(machine_cpu_cores) by (instance)"
 	NodeMemoryBytesQuery = "sum(machine_memory_bytes) by (instance)"
+
+	NodeHTTPRequestsPerMin = "sum( rate (http_requests_total[1m])) by (instance)"
+
 )

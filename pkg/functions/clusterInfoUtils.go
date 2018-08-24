@@ -8,6 +8,7 @@ import (
 	apps_v1beta2 "k8s.io/api/apps/v1beta2"
 	meta_v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
+	"math"
 )
 
 func getNodeCapacities(node core_v1.Node) (float64, float64){
@@ -26,8 +27,6 @@ func getNodeCapacities(node core_v1.Node) (float64, float64){
 
 	return cpuCores, memBytes
 }
-
-
 
 func (f FunctionSet) getNodePodNames(nodes *core_v1.NodeList) map[string][]string{
 	nodePods := make(map[string][]string, 0)
@@ -72,4 +71,26 @@ func (f FunctionSet) getDeploymentPodNames(deployments *apps_v1beta2.DeploymentL
 	}
 
 	return deploymentPods
+}
+
+func getCPURequest(target *apps_v1beta2.Deployment) float64{
+	cpuRequestDec := target.Spec.Template.Spec.Containers[0].Resources.Requests.Cpu().AsDec()
+	cpuRequestUnscaled, faulted := cpuRequestDec.Unscaled()
+	if !faulted {
+		return math.MaxFloat64
+	}
+	cpuRequestScale := math.Pow(10, float64(cpuRequestDec.Scale()))
+	cpuRequest := float64(cpuRequestUnscaled) / cpuRequestScale
+	return cpuRequest
+}
+
+func getMemRequest(target *apps_v1beta2.Deployment) float64{
+	memRequestDec := target.Spec.Template.Spec.Containers[0].Resources.Requests.Memory().AsDec()
+	memRequestUnscaled, faulted := memRequestDec.Unscaled()
+	if !faulted {
+		return math.MaxFloat64
+	}
+	memRequestScale := math.Pow(10, float64(memRequestDec.Scale()))
+	memRequest := float64(memRequestUnscaled) / memRequestScale
+	return memRequest
 }
