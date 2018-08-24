@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"github.com/junkeun-yi/kube-informer/pkg/functions"
+	"github.com/junkeun-yi/cluster-describer_kuberentes/pkg/functions"
 )
 
 type Controller struct {

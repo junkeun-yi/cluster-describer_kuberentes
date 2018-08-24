@@ -5,7 +5,7 @@ import (
 	"time"
 	"fmt"
 
-	"github.com/junkeun-yi/kube-informer/pkg/utils"
+	"github.com/junkeun-yi/cluster-describer_kuberentes/pkg/utils"
 	"strings"
 	"strconv"
 )
