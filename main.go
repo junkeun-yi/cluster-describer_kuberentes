@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/junkeun-yi/kube-informer/pkg/client"
-	"github.com/junkeun-yi/kube-informer/pkg/controller"
-	"github.com/junkeun-yi/kube-informer/pkg/functions"
+	"github.com/junkeun-yi/cluster-describer_kubernetes/pkg/client"
+	"github.com/junkeun-yi/cluster-describer_kubernetes/pkg/controller"
+	"github.com/junkeun-yi/cluster-describer_kubernetes/pkg/functions"
 )
 
 
