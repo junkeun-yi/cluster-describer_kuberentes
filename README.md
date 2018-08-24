@@ -1,4 +1,4 @@
-# kube-informer
+# cluster-describer for kubernetes
 
 To run:
 
