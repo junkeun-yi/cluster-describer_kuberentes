@@ -6,7 +6,6 @@ import (
 
 	meta_v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	// "github.com/junkeun-yi/kube-informer/pkg/config"
 	"github.com/junkeun-yi/cluster-describer_kuberentes/pkg/config"
 )
 
