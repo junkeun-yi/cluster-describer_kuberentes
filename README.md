@@ -15,3 +15,4 @@ To run:
 		go run main.go
 
 TODO: Make Makefile, add vendor
+TODO: use prometheus custom metrics instead of using prometheus client
