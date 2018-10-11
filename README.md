@@ -1,4 +1,4 @@
-# cluster-describer for kubernetes
+# kubernetes_practice
 
 To run:
 
